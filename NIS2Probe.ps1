@@ -686,8 +686,10 @@ $scoreThresholds = @{
     AutoTrust    = 3    # ProvenanceScore ≥ 3
 }
 $cdnSuppress = @{
-    Thumbprints = @("CE8232BDB6C1422965FC6BB6915AB2135E7A3EF6", "6109B882967FE122E0AB59736BFFA707D684878A"  , "6109B882967FE122E0AB59736BFFA707D684878A")
-    Issuers     = @("*Akamai*", "*Fastly*", "*Certainly*")
+   ## COULD SUPPRESS MICROSOFT PARTNER CDNs:
+   
+   # Thumbprints = @("CE8232BDB6C1422965FC6BB6915AB2135E7A3EF6", "6109B882967FE122E0AB59736BFFA707D684878A"  , "6109B882967FE122E0AB59736BFFA707D684878A")
+   # Issuers     = @("*Akamai*", "*Fastly*", "*Certainly*")
 }
 
 function Register-SuppressionEntry {
