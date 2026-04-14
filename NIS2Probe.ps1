@@ -616,7 +616,8 @@ $targetHostnames = @(
     # "download.microsoft.com",
 
     # # --- Delivery Optimization / CDN / ISP caches ---
-    #  "tlu.dl.delivery.mp.microsoft.com" 
+    # TLU.DL.DELIVERY should serve via port 8080
+      "tlu.dl.delivery.mp.microsoft.com" 
     #  "geo.delivery.mp.microsoft.com "
     # "ipv6.delivery.mp.microsoft.com",
     # "cdn.download.windowsupdate.com" 
@@ -666,7 +667,7 @@ $targetHostnames = @(
 
     # # --- Azure control plane and telemetry (critical for cloud services) ---
     # "login.azure.com",
-    "portal.azure.com" 
+    # "portal.azure.com" 
     # "management.azure.com",
     # "blob.core.windows.net" 
     # "vault.azure.net",
