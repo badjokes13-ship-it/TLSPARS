@@ -16,6 +16,12 @@ $probeResults = @()
 $geoCache = @{}
 $asnCache = @{}
 $whoisCache = @{}
+
+
+# --- CLASSIFICATION LOGIC inmemory injection ---
+. "$PSScriptRoot\Classify-NIS2.ps1"
+
+
 function Get-GeoInfo {
     param([string]$ip)
     if ($geoCache.ContainsKey($ip)) { return $geoCache[$ip] }
@@ -565,7 +571,7 @@ function Build-ProbeResult {
         GeoISP                     = $Geo.ISP
         GeoOrg                     = $Geo.Org
         ASN                        = if ($ASN -is [hashtable]) { "nouu $ASN.Org" } else { $ASN }
-        $hasMicrosoftPKI           = $false
+        hasMicrosoftPKI           = "False"
     
         WhoisOrgName               = $Whois.Name
         WhoisHandle                = $Whois.Handle
